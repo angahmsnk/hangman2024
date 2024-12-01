@@ -1,7 +1,7 @@
 const hangman = document.getElementById('hangman');
 const letters = document.getElementById('letters');
 const chancesCount = document.getElementById('chancesCount');
-const ludzikParts = document.querySelectorAll('#ludzik .hiddenPart'); // Pobierz elementy wisielca
+const stickFigureParts = document.querySelectorAll('#stickFigure .hiddenPart'); // Pobierz elementy wisielca
 let chances = 6;
 let guessedLetters = [];
 let randomWord = [];
@@ -59,7 +59,7 @@ const newGame = () => {
     chancesCount.textContent = chances;
     randomWord = [];
     guessedLetters = [];
-    ludzikParts.forEach((part) => part.classList.add('hiddenPart')); // Ukryj części wisielca
+    stickFigureParts.forEach((part) => part.classList.add('hiddenPart')); // Ukryj części wisielca
     document.addEventListener('keydown', checkingAnswer); // Aktywuj obsługę klawiatury
     generateLetters();
     modalWindow.style.setProperty('opacity', 0);
@@ -91,7 +91,7 @@ const checkingAnswer = (e) => {
     } else {
         chancesCount.textContent = --chances;
         // Pokazanie kolejnej części wisielca
-        ludzikParts[6 - chances - 1]?.classList.remove('hiddenPart');
+        stickFigureParts[6 - chances - 1]?.classList.remove('hiddenPart');
 
         if (chances === 0) {
             modalWindow.textContent = `Przegrałeś! Prawidłowe słowo to: ${randomWord.join('')}`
@@ -100,7 +100,6 @@ const checkingAnswer = (e) => {
         }
     }
 };
-
 
 // Obsługa przycisków
 const rulesButton = document.getElementById('rules');
@@ -113,7 +112,7 @@ closeRules.addEventListener('click', () => {
     rulesDiv.classList.remove('showHangmanRules');
 });
 
-const newGameButton = document.getElementById('new-game');
+const newGameButton = document.getElementById('newGame');
 newGameButton.addEventListener('click', newGame);
 
 // Rozpoczęcie gry po załadowaniu strony

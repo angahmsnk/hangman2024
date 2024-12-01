@@ -44,6 +44,7 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 #buttons {
     height: 70px;
     padding: 10px;
@@ -88,7 +89,7 @@ body {
 }
 
 /* Stylowanie ludzika */
-#ludzik {
+#stickFigure {
     position: absolute;
     top: 40px;
     right: 95px;
@@ -103,7 +104,7 @@ body {
     transform:scale(0.6);
 }
 
-#ludzik * {
+#stickFigure * {
     align-self: stretch;
     transition: opacity 0.5s;
 }
