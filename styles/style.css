@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    color: white;
+    overflow: hidden;    
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#hangman, #letters, #buttons {
+    width: 600px;
+}
+
+#hangman {
+    position: relative;
+    border: 3px solid white;
+    height: 500px;
+}
+
+#chances {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    margin-right: 20px;
+}
+
+#letters {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#buttons {
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#buttons > *, #closeRules {
+    width: 100px;
+    height: 50px;
+}
+
+.letter {
+    margin: 10px ;
+    text-align: center;
+    width: 50px;
+    font-size: 3em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid white;
+}
+
+.hiddenLetter {
+    opacity: 0;
+}
+
+.hangmanRules {
+    position: absolute;
+    background-color: #222;
+    width: 700px;
+    height: 100%;
+    top: 0; right: 0;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+}
+
+.showHangmanRules {
+    transform: translateX(0%);
+}
+
+/* Stylowanie ludzika */
+#ludzik {
+    position: absolute;
+    top: 40px;
+    right: 95px;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: stretch;
+    justify-items: stretch;
+    padding: 0;
+    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 100px);
+    transform:scale(0.6);
+}
+
+#ludzik * {
+    align-self: stretch;
+    transition: opacity 0.5s;
+}
+
+img[alt='Głowa']{
+    grid-column-start: 2;
+}
+
+img[alt='Lewa ręka']{
+    grid-row: 2 / 4;
+    grid-column-start: 2;
+}
+
+img[alt='Tors']{
+    grid-row: 2 / 4;
+    grid-column-start: 2;
+    z-index: -1
+}
+
+img[alt='Prawa ręka']{
+    grid-row: 2 / 4;
+    grid-column-start: 2;
+    transform: rotateY(180deg);
+}
+
+img[alt='Lewa noga']{
+    grid-row: 4 / 6;
+    grid-column-start: 2;
+}
+
+img[alt='Prawa noga']{
+    grid-row: 4 / 6;
+    grid-column-start: 2;
+    transform: rotateY(180deg);
+}
+
+.hiddenPart {
+    opacity: 0;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    margin: 10px;
+    width: 450px;
+    height: 50px;
+    border: 5px solid black;
+    background-color: #fff;
+    color: black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s;
+}

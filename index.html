@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WISIELEC</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="title"><h1>Gra Wisielec (Hangman)</h1></div>
+        <div id="hangman">
+            <div id="chances">
+                <p>Szanse:</p>
+                <span id="chancesCount"></span>
+            </div>
+            <img src="./images/szubienica.png" alt="">
+            <div id="ludzik">
+                <img src="./images/głowa.png" alt="Głowa" class="hiddenPart">
+                <img src="./images/tors.png" alt="Tors" class="hiddenPart">
+                <img src="./images/reka.png" alt="Lewa ręka" class="hiddenPart">
+                <img src="./images/reka.png" alt="Prawa ręka" class="hiddenPart">
+                <img src="./images/noga.png" alt="Lewa noga" class="hiddenPart">
+                <img src="./images/noga.png" alt="Prawa noga" class="hiddenPart">
+            </div>
+        </div>
+        <div id="letters"></div>
+        
+        <div id="buttons">
+            <button id="rules">Zasady</button>
+            <button id="new-game">Nowa gra</button>
+        </div>
+        <div class="hangmanRules">
+            <h2>Zasady gry</h2>
+            <div class="rule" id="rule-1">
+                <strong>1. Rozpoczęcie gry:</strong>
+                <p>Gracz klika przycisk "Start", aby rozpocząć nową rozgrywkę. System losuje słowo i wyświetla na ekranie jego długość w formie pustych miejsc (<span class="blank-spaces">_ _ _ _ _</span>), gdzie każda kreska odpowiada jednej literze w słowie.</p>
+            </div>
+            <div class="rule" id="rule-2">
+                <strong>2. Zgadywanie liter:</strong>
+                <p>Gracz wybiera litery wpisując je z klawiatury komputera. Jeśli wybrana litera znajduje się w słowie, zostaje automatycznie wstawiona we wszystkie odpowiednie miejsca. Jeśli litera nie występuje w słowie, system dodaje jeden element rysunku wisielca i zmniejsza liczbę dostępnych prób o jedną.</p>
+            </div>
+            <div class="rule" id="rule-3">
+                <strong>3. Ograniczona liczba prób:</strong>
+                <p>Gracz ma 6 prób, zanim rysunek wisielca zostanie ukończony. Każda błędna litera zmniejsza liczbę dostępnych prób.</p>
+            </div>
+            <div class="rule" id="rule-4">
+                <strong>4. Wygrana:</strong>
+                <p>Gracz wygrywa, jeśli zgadnie wszystkie litery słowa przed wykorzystaniem wszystkich prób. Po wygranej wyświetlane jest gratulacyjne powiadomienie z możliwością rozpoczęcia nowej gry.</p>
+            </div>
+            <div class="rule" id="rule-5">
+                <strong>5. Przegrana:</strong>
+                <p>Gracz przegrywa, jeśli liczba błędnych liter osiągnie limit, a rysunek wisielca zostanie ukończony. Po przegranej gracz zobaczy prawidłowe słowo oraz opcję zagrania ponownie.</p>
+            </div>
+            <button id="closeRules">Zamknij</button>
+        </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
